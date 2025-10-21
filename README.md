@@ -61,9 +61,11 @@
 扩展就会自动将消息通过 Bark 推送到手机端。
 
 **多账号用法**
+
 当监控多账号时，为了在bark接收得消息中显示接收方具体是哪个账户，需要配置token2username.txt文件。
 当在网页登录上闲鱼后连接通常 如下：https://www.goofish.com/im?spm=a21ybx.home.sidebar.2.XXXXX
-在token2username.txt中写好映射关系，如XXXXX----用户1。这样在bark端便可以区分具体是哪个账户接收到了消息。
+在token2username.txt中写好映射关系（每5s重载一次），如XXXXX----用户1。这样在bark端便可以区分具体是哪个账户接收到了消息。
+
 ⚙️ **说明**
 **为什么用火狐？**
 
