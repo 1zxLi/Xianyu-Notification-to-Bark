@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Notify→Bark 设置</title>
+  <style>
+    body { font-family: Arial; min-width: 320px; padding: 10px; }
+    label { display: block; margin-top: 8px; font-size: 13px; }
+    input[type="text"], input[type="number"], textarea { width: 100%; box-sizing: border-box; }
+    textarea { height: 60px; }
+    button { margin-top: 10px; padding: 6px 10px; }
+    .note { font-size: 12px; color: #666; margin-top:6px; }
+  </style>
+</head>
+<body>
+  <h3>Notify → Bark</h3>
+  <label>Bark Key:
+    <input id="barkKey" type="text" placeholder="例如: c3mple-bark-key" />
+  </label>
+  <label>域名白名单（每行一个，空表示允许所有）:
+    <textarea id="whitelist"></textarea>
+  </label>
+  <label>去重窗口（毫秒）:
+    <input id="dedup" type="number" min="0" value="5000" />
+  </label>
+  <label>每分钟最大发送次数:
+    <input id="rate" type="number" min="1" value="60" />
+  </label>
+  <label>失败重试间隔（毫秒）:
+    <input id="retry" type="number" min="1000" value="5000" />
+  </label>
+  <label>最大重试次数:
+    <input id="maxRetries" type="number" min="0" value="3" />
+  </label>
+  <button id="save">保存设置</button>
+  <div id="msg" class="note"></div>
+
+  <!-- 改为外部文件，避免 CSP 报错 -->
+  <script src="popup.js"></script>
+</body>
+</html>
